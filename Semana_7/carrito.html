@@ -1,0 +1,112 @@
+<doctype html>
+	<html>
+
+	<head>
+		<title>Carrito</title>
+		<link rel="stylesheet" href="bulma.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="navbar.js">
+		</script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="colums">
+				<div class="colums is-40">
+					<h1 class="Title is-1">Carrito de compras</h1>
+					<label class="label">Cantidad</label>
+                        <div class="control">
+                            <input type="number" class="input" id="producto_cantidad" max="10" min="1" name="cantidad">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="colums">
+                    <div class="colums is-">
+                        <label class="label">Nombre del producto</label>
+                        <div class="select is-fullwidth">
+                            <select class="select" name="producto" id="producto">
+                                <option>-Selecciona un producto-</option>
+                                <option id="6000">Huawei P30 Lite $6,000</option>
+                                <option id="5800">Huawei P40 Lite $6,000</option>
+                                <option id="4000">Motorola G6 Plus $4,000</option>
+                                <option id="9000">Samsumg s9 plus $9,000</option>
+                                <option id="7000">Samsumg s8 plus $7,500</option>
+                                <option id="5190">Motorola g8 plus $5,190</option>
+                                <option id="3989">Iphone 6s plus 32 gb $3,989</option>
+                                <option id="18700">iphone 11 64g4 $18,700</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="colums">
+                    <div class="colums is-4">
+                        <p class="help">Para agregar al carrito oprima el siguiente boton</p>
+                        <div class="control">
+                            <button class="button is-primary" onclick="agregar()">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        <body class="container">
+            <div class="colums">
+                <div class="colums is-4">
+                    <p class="help">Para hacer una nueva compra pulse el sigueinte boton</p>
+                    <div class="control">
+                        <button class="button is-primary" onclick="nuevo()">Nueva Compra</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="colums">
+                    <div class="colums is-4">
+                        <h5 class="subtitle is-5">Carrito de compras</h5>
+                        <div class="control">
+                            <textarea class="textarea" name="carrito_compras" id="carrito_compras"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="colums">
+                    <div class="colums is-40">
+                        <div class="control">
+                            <p>Total de la compra <input type="text" id="total" name="total" disabled> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function agregar(){
+                    var productos=$('#producto option:selected').text();
+                    var costo=$("#producto").val();
+                    var carrito_compras=$("#carrito_compras").val();
+                    var cantidad=$("#producto_cantidad").val();
+                    var total_pagar=0;
+                    if (cantidad>0 & cantidad<10){
+                        $("#carrito_compras").text(carrio_compras+"Numero de productos: "+productos_cantidad);
+                        $("#carrito_compras").text(carrio_compras+"El/Los prosuctos son: "+productos);
+                        $("#carrito_compras").text(carrito_compras+"El precio Unitario es de: "+costo);
+                        $("#carrito_compras").text(carrito_compras+"El total es de: "+parseFloat(productos_cantidad)*parseFloat(costo)+"\n");
+                    }
+                 }
+                function nuevo(){
+                    $("#producto_cantidad").val("0");
+                    $('#carrito_compras').empty():
+                    $('#total').val();
+                    $('#producto').val("0");
+                }
+                function totales(costo){
+                    var total=$('#total').val();
+                    var total_suma=parseFloat(costo)+parseFloat(total);
+                    $('#total').val(total);
+                }
+            </script>
+        </body>
+    </html>
+</doctype>
