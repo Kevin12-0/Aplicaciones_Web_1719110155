@@ -1,112 +1,49 @@
-<doctype html>
-	<html>
-
-	<head>
-		<title>Carrito</title>
-		<link rel="stylesheet" href="bulma.css">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="navbar.js">
-		</script>
-	</head>
-
-	<body>
-		<div class="container">
-			<div class="colums">
-				<div class="colums is-40">
-					<h1 class="Title is-1">Carrito de compras</h1>
-					<label class="label">Cantidad</label>
-                        <div class="control">
-                            <input type="number" class="input" id="producto_cantidad" max="10" min="1" name="cantidad">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="colums">
-                    <div class="colums is-">
-                        <label class="label">Nombre del producto</label>
-                        <div class="select is-fullwidth">
-                            <select class="select" name="producto" id="producto">
-                                <option>-Selecciona un producto-</option>
-                                <option id="6000">Huawei P30 Lite $6,000</option>
-                                <option id="5800">Huawei P40 Lite $6,000</option>
-                                <option id="4000">Motorola G6 Plus $4,000</option>
-                                <option id="9000">Samsumg s9 plus $9,000</option>
-                                <option id="7000">Samsumg s8 plus $7,500</option>
-                                <option id="5190">Motorola g8 plus $5,190</option>
-                                <option id="3989">Iphone 6s plus 32 gb $3,989</option>
-                                <option id="18700">iphone 11 64g4 $18,700</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="colums">
-                    <div class="colums is-4">
-                        <p class="help">Para agregar al carrito oprima el siguiente boton</p>
-                        <div class="control">
-                            <button class="button is-primary" onclick="agregar()">Agregar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </body>
-        <body class="container">
-            <div class="colums">
-                <div class="colums is-4">
-                    <p class="help">Para hacer una nueva compra pulse el sigueinte boton</p>
-                    <div class="control">
-                        <button class="button is-primary" onclick="nuevo()">Nueva Compra</button>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="colums">
-                    <div class="colums is-4">
-                        <h5 class="subtitle is-5">Carrito de compras</h5>
-                        <div class="control">
-                            <textarea class="textarea" name="carrito_compras" id="carrito_compras"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="colums">
-                    <div class="colums is-40">
-                        <div class="control">
-                            <p>Total de la compra <input type="text" id="total" name="total" disabled> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <script>
-                function agregar(){
-                    var productos=$('#producto option:selected').text();
-                    var costo=$("#producto").val();
-                    var carrito_compras=$("#carrito_compras").val();
-                    var cantidad=$("#producto_cantidad").val();
-                    var total_pagar=0;
-                    if (cantidad>0 & cantidad<10){
-                        $("#carrito_compras").text(carrio_compras+"Numero de productos: "+productos_cantidad);
-                        $("#carrito_compras").text(carrio_compras+"El/Los prosuctos son: "+productos);
-                        $("#carrito_compras").text(carrito_compras+"El precio Unitario es de: "+costo);
-                        $("#carrito_compras").text(carrito_compras+"El total es de: "+parseFloat(productos_cantidad)*parseFloat(costo)+"\n");
-                    }
-                 }
-                function nuevo(){
-                    $("#producto_cantidad").val("0");
-                    $('#carrito_compras').empty():
-                    $('#total').val();
-                    $('#producto').val("0");
-                }
-                function totales(costo){
-                    var total=$('#total').val();
-                    var total_suma=parseFloat(costo)+parseFloat(total);
-                    $('#total').val(total);
-                }
-            </script>
-        </body>
-    </html>
-</doctype>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="carrito.js"></script>
+	 <link rel="stylesheet" type="text/css" href="bulma.css">
+	<title>Carrio de compras</title>
+</head>
+<body>
+	<div class="container">
+		<div class="colums">
+			<div class="colums is-4">
+				<h1 class="title is-1">Carrito de compras</h1>
+				<label class="label">Cantidad</label>
+				<input type="number" name="cantidad_1" id="cantidad1" class="input" min="1" max="10">
+				<p class="help">Minimo un producto</p>
+				<label class="label">Productos</label>
+				<div class="select is-primary">
+					<select class="select" name="producto_1" id="producto1">
+                        <option>-Selecciona un producto-</option>
+                        <option value="6000">Huawei P30 Lite $6,000</option>
+                        <option value="5800">Huawei P40 Lite $6,000</option>
+                        <option value="4000">Motorola G6 Plus $4,000</option>
+                        <option value="9000">Samsumg s9 plus $9,000</option>
+                        <option value="7000">Samsumg s8 plus $7,500</option>
+                        <option value="5190">Motorola g8 plus $5,190</option>
+                        <option value="3989">Iphone 6s plus 32 gb $3,989</option>
+                        <option value="18700">iphone 11 64g4 $18,700</option>
+                    </select>
+				</div>
+				<br>
+				<button class="button is-primary" onclick="agregar()" id="agregar1" name="agregar_1">Agregar</button>
+				<br>
+				<p class="help">Si desea hacer una nueva compra oprima el siguiente boton</p>
+				<button class="button is-primary" onclick="nueva()" id="nuevo1" name="nuevo_1">Nueva Compra</button>
+				<label class="label">Carrito de compras</label>
+				<textarea class="textarea" name="carritocompras_1" id="carritocompras1"></textarea>
+				<label class="label">Total</label>
+				<input type="number" name="total_1" id="total1" class="input" value="0" readonly>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
